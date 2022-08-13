@@ -8,16 +8,15 @@ const app = express();
 var cookieParser = require('cookie-parser')
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
-// app.use(
-//   cookieSession({ name: "session", keys: ["VanTinh"], maxAge: 24 * 60 * 60 * 100 })
-// );
-// app.use(
-//   cors({
-//     origin: "http://localhost:3000",
-//     methods: "GET,POST,PUT,DELETE",
-//     credentials: true,
-//   })
-// );
+
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    methods: "GET,POST,PUT,DELETE",
+    credentials: true,
+  })
+);
+
 
 const session = require('express-session')
 
